@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   
+  <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://yoursite.com">
   <title>用express＋cheerio＋superagent实现的爬虫 | 曾麟翔的秘密花园</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="superagent 是一个http 方面的库，可以发起 get 或 post 请求。superagent可以返回两个参数，第一个是error ，第二个是整个网页的内容，那么，我们可以用他的返回值做很多事情
@@ -20,21 +22,25 @@ cheerio是一个node.js的jquery库。你可以用jquery的方法来玩所以，
 <meta name="twitter:description" content="superagent 是一个http 方面的库，可以发起 get 或 post 请求。superagent可以返回两个参数，第一个是error ，第二个是整个网页的内容，那么，我们可以用他的返回值做很多事情
 cheerio是一个node.js的jquery库。你可以用jquery的方法来玩所以，做网页爬虫遍可以用这两个组合来做了。1234567891011121314151617181920212">
   
+    <link rel="alternative" href="/atom.xml" title="曾麟翔的秘密花园" type="application/atom+xml">
   
-    <link rel="icon" href="/../img/mz1.png">
   
-  <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
 </head>
 
 <body>
   <div id="container">
     <div class="left-col">
-    <div class="overlay"></div>
+      <div class="overlay"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="/../img/mz1.png" class="js-avatar">
+			<img src="img/zlx.jpg" class="js-avatar">
 			
 		</a>
 
@@ -44,102 +50,67 @@ cheerio是一个node.js的jquery库。你可以用jquery的方法来玩所以，
 
 		
 
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>Menu</li>
-						<li>Tags</li>
-						
-						<li>Links</li>
-						
-						
-					</ul>
-				</div>
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="#" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+		        
 			</div>
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">主页</a></li>
-				        
-							<li><a href="/memo.html">备忘录</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="https://github.com/zenglincient" title="github">github</a>
-					        
-								<a class="douban" target="_blank" href="#" title="douban">douban</a>
-					        
-								<a class="mail" target="_blank" href="mailto:511871084@qq.com" title="mail">mail</a>
-					        
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://swfox.github.io">看风的狐狸</a>
-			        
-			        </div>
-				</section>
-				
-
-				
-			</div>
-		</div>
-	</header>				
+		</nav>
+	</header>		
 </div>
 
     </div>
     <div class="mid-col">
       <nav id="mobile-nav">
   	<div class="overlay">
-  		<div class="slider-trigger"></div>
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
   		<h1 class="header-author js-mobile-header hide">曾麟翔</h1>
   	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
 				
-					<img lazy-src="/../img/mz1.png" class="js-avatar">
+					<img src="img/zlx.jpg" class="js-avatar">
 				
 			</div>
 			<hgroup>
@@ -151,19 +122,20 @@ cheerio是一个node.js的jquery库。你可以用jquery的方法来玩所以，
 				
 					<li><a href="/">主页</a></li>
 		        
-					<li><a href="/memo.html">备忘录</a></li>
+					<li><a href="/tags/随笔">随笔</a></li>
 		        
-		        <div class="clearfix"></div>
 				</ul>
 			</nav>
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/zenglincient" title="github">github</a>
+						<a class="github" target="_blank" href="#" title="github">github</a>
 			        
-						<a class="douban" target="_blank" href="#" title="douban">douban</a>
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
 			        
-						<a class="mail" target="_blank" href="mailto:511871084@qq.com" title="mail">mail</a>
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
 			        
 				</div>
 			</nav>
@@ -171,15 +143,11 @@ cheerio是一个node.js的jquery库。你可以用jquery的方法来玩所以，
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-用express＋cheerio＋superagent实现的爬虫" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/23/用express＋cheerio＋superagent实现的爬虫/" class="article-date">
-  	<time datetime="2016-10-23T08:52:51.000Z" itemprop="datePublished">2016-10-23</time>
-</a>
-    </div>
-  
+      <div class="body-wrap">
+        <article id="post-用express＋cheerio＋superagent实现的爬虫" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -191,14 +159,6 @@ cheerio是一个node.js的jquery库。你可以用jquery的方法来玩所以，
   
 
       </header>
-      
-      <div class="article-info article-info-post">
-        
-        
-
-        <div class="clearfix"></div>
-      </div>
-      
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -207,14 +167,24 @@ cheerio是一个node.js的jquery库。你可以用jquery的方法来玩所以，
 <h2 id="这个爬虫可以爬到cnode-js里面帖子的标题和链接。"><a href="#这个爬虫可以爬到cnode-js里面帖子的标题和链接。" class="headerlink" title="这个爬虫可以爬到cnode.js里面帖子的标题和链接。"></a>这个爬虫可以爬到cnode.js里面帖子的标题和链接。</h2>
       
     </div>
-    
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/23/用express＋cheerio＋superagent实现的爬虫/" class="archive-article-date">
+  	<time datetime="2016-10-23T08:52:51.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-23</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
   </div>
+</article>
+
   
-    
 <nav id="article-nav">
   
     <a href="/2016/10/23/进阶的爬虫/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
+      <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
           (no title)
@@ -225,13 +195,12 @@ cheerio是一个node.js的jquery库。你可以用jquery的方法来玩所以，
   
     <a href="/2016/10/22/hello/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">lesson2</div>
-      <strong class="article-nav-caption">></strong>
+      <i class="icon-circle-right"></i>
     </a>
   
 </nav>
 
-  
-</article>
+
 
 
 <div class="share_jia">
@@ -239,16 +208,16 @@ cheerio是一个node.js的jquery库。你可以用jquery的方法来玩所以，
 	<div class="jiathis_style">
 		<span class="jiathis_txt">Share to: &nbsp; </span>
 		<a class="jiathis_button_facebook"></a> 
-    <a class="jiathis_button_twitter"></a>
-    <a class="jiathis_button_plus"></a> 
-    <a class="jiathis_button_tsina"></a>
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
 		<a class="jiathis_button_cqq"></a>
 		<a class="jiathis_button_douban"></a>
 		<a class="jiathis_button_weixin"></a>
 		<a class="jiathis_button_tumblr"></a>
     <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
 	<!-- JiaThis Button END -->
 </div>
 
@@ -257,29 +226,10 @@ cheerio是一个node.js的jquery库。你可以用jquery的方法来玩所以，
 
 
 
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="用express＋cheerio＋superagent实现的爬虫" data-title="用express＋cheerio＋superagent实现的爬虫" data-url="http://yoursite.com/2016/10/23/用express＋cheerio＋superagent实现的爬虫/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"a997f39b1ed8770cf5886f7effdc8124"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
 
 
 
-
-</div>
+      </div>
       <footer id="footer">
   <div class="outer">
     <div id="footer-info">
@@ -293,11 +243,9 @@ cheerio是一个node.js的jquery库。你可以用jquery的方法来玩所以，
   </div>
 </footer>
     </div>
-    
-
-<script>
+    <script>
 	var yiliaConfig = {
-		fancybox: false,
+		fancybox: true,
 		mathjax: false,
 		animate: true,
 		isHome: false,
@@ -306,17 +254,142 @@ cheerio是一个node.js的jquery库。你可以用jquery的方法来玩所以，
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
-		root: /
+		root: "/",
+		innerArchive: true
 	}
 </script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script src="/js/main.js"></script>
+
+<script src="/./main.js"></script>
 
 
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
 
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				
+    			</div>
+    	</section>
+    
 
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接1</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接2</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接3</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接4</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接5</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接6</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
 
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
   </div>
 </body>
 </html>
