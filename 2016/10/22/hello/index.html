@@ -3,18 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>lesson2 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="nihao ndwjdnwq jwngg">
+  <meta name="description" content="我们来新建一个 lesson2 项目，并生成一份它的 package.json。
+$ mkdir lesson2 &amp;amp;&amp;amp; cd lesson2$ npm initOK，这时会要求我们输入一些信息，乱填就好了，反正这个地方也不用填依赖关系。
+$ npm install express utility –save
+这次的安装命令与上节课的命令有两点不同，一是没有指定 registry，没">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="lesson2">
 <meta property="og:url" content="http://yoursite.com/2016/10/22/hello/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="nihao ndwjdnwq jwngg">
-<meta property="og:updated_time" content="2016-10-22T09:09:44.000Z">
+<meta property="og:description" content="我们来新建一个 lesson2 项目，并生成一份它的 package.json。
+$ mkdir lesson2 &amp;amp;&amp;amp; cd lesson2$ npm initOK，这时会要求我们输入一些信息，乱填就好了，反正这个地方也不用填依赖关系。
+$ npm install express utility –save
+这次的安装命令与上节课的命令有两点不同，一是没有指定 registry，没">
+<meta property="og:updated_time" content="2016-10-23T08:09:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="nihao ndwjdnwq jwngg">
+<meta name="twitter:title" content="lesson2">
+<meta name="twitter:description" content="我们来新建一个 lesson2 项目，并生成一份它的 package.json。
+$ mkdir lesson2 &amp;amp;&amp;amp; cd lesson2$ npm initOK，这时会要求我们输入一些信息，乱填就好了，反正这个地方也不用填依赖关系。
+$ npm install express utility –save
+这次的安装命令与上节课的命令有两点不同，一是没有指定 registry，没">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -73,14 +82,34 @@
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      lesson2
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>nihao ndwjdnwq jwngg </p>
+        <p>我们来新建一个 lesson2 项目，并生成一份它的 package.json。</p>
+<p>$ mkdir lesson2 &amp;&amp; cd lesson2<br>$ npm init<br>OK，这时会要求我们输入一些信息，乱填就好了，反正这个地方也不用填依赖关系。</p>
+<p>$ npm install express utility –save</p>
+<p>这次的安装命令与上节课的命令有两点不同，一是没有指定 registry，没有指定的情况下，默认从 npm 官方安装，上次我们是从淘宝的源安装的。二是多了个 –save 参数，这个参数的作用，就是会在你安装依赖的同时，自动把这些依赖写入 package.json。命令执行完成之后，查看 package.json，会发现多了一个 dependencies 字段，</p>
+<p>####// 引入依赖<br>var express = require(‘express’);<br>var utility = require(‘utility’);</p>
+<p>####// 建立 express 实例  ###<br>var app = express();</p>
+<p>app.get(‘/‘, function (req, res) {<br>  // 从 req.query 中取出我们的 q 参数。<br>  // 如果是 post 传来的 body 数据，则是在 req.body 里面，不过 express 默认不处理 body 中的信息，需要引入 <a href="https://github.com/expressjs/body-parser" target="_blank" rel="external">https://github.com/expressjs/body-parser</a> 这个中间件才会处理，这个后面会讲到。<br>  // 如果分不清什么是 query，什么是 body 的话，那就需要补一下 http 的知识了<br>  var q = req.query.q;</p>
+<p>  // 调用 utility.md5 方法，得到 md5 之后的值<br>  // 之所以使用 utility 这个库来生成 md5 值，其实只是习惯问题。每个人都有自己习惯的技术堆栈，<br>  // 我刚入职阿里的时候跟着苏千和朴灵混，所以也混到了不少他们的技术堆栈，仅此而已。<br>  // utility 的 github 地址：<a href="https://github.com/node-modules/utility" target="_blank" rel="external">https://github.com/node-modules/utility</a><br>  // 里面定义了很多常用且比较杂的辅助方法，可以去看看<br>  var md5Value = utility.md5(q);</p>
+<p>  res.send(md5Value);<br>});</p>
+<p>app.listen(3000, function (req, res) {<br>  console.log(‘app is running at port 3000’);<br>});</p>
+<p>//事实上，req.query.q 是http请求里面的 ?q=alsotang 这块东西<br>//res.send  返回数据</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/22/hello/" data-id="ciukzizbi00019md9f37s8bn3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/22/hello/" data-id="ciul0i05v0000otd962kxx15y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -88,6 +117,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/10/23/用express＋cheerio＋superagent实现的爬虫/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          用express＋cheerio＋superagent实现的爬虫
+        
+      </div>
+    </a>
   
   
     <a href="/2016/10/22/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -129,7 +167,11 @@
       <ul>
         
           <li>
-            <a href="/2016/10/22/hello/">(no title)</a>
+            <a href="/2016/10/23/用express＋cheerio＋superagent实现的爬虫/">用express＋cheerio＋superagent实现的爬虫</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/22/hello/">lesson2</a>
           </li>
         
           <li>
