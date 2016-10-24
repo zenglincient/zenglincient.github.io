@@ -6,27 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>lesson2 | 曾麟翔的秘密花园</title>
+  <title>Tag: 随笔 | 曾麟翔的秘密花园</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我们来新建一个 lesson2 项目，并生成一份它的 package.json。
-$ mkdir lesson2 &amp;amp;&amp;amp; cd lesson2$ npm initOK，这时会要求我们输入一些信息，乱填就好了，反正这个地方也不用填依赖关系。
-$ npm install express utility –save
-这次的安装命令与上节课的命令有两点不同，一是没有指定 registry，没">
-<meta property="og:type" content="article">
-<meta property="og:title" content="lesson2">
-<meta property="og:url" content="http://yoursite.com/2016/10/22/hello/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="曾麟翔的秘密花园">
+<meta property="og:url" content="http://yoursite.com/tags/随笔/index.html">
 <meta property="og:site_name" content="曾麟翔的秘密花园">
-<meta property="og:description" content="我们来新建一个 lesson2 项目，并生成一份它的 package.json。
-$ mkdir lesson2 &amp;amp;&amp;amp; cd lesson2$ npm initOK，这时会要求我们输入一些信息，乱填就好了，反正这个地方也不用填依赖关系。
-$ npm install express utility –save
-这次的安装命令与上节课的命令有两点不同，一是没有指定 registry，没">
-<meta property="og:updated_time" content="2016-10-23T09:57:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lesson2">
-<meta name="twitter:description" content="我们来新建一个 lesson2 项目，并生成一份它的 package.json。
-$ mkdir lesson2 &amp;amp;&amp;amp; cd lesson2$ npm initOK，这时会要求我们输入一些信息，乱填就好了，反正这个地方也不用填依赖关系。
-$ npm install express utility –save
-这次的安装命令与上节课的命令有两点不同，一是没有指定 registry，没">
+<meta name="twitter:title" content="曾麟翔的秘密花园">
   
     <link rel="alternative" href="/atom.xml" title="曾麟翔的秘密花园" type="application/atom+xml">
   
@@ -150,122 +137,54 @@ $ npm install express utility –save
 </nav>
 
       <div class="body-wrap">
-        <article id="post-hello" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      lesson2
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/10/10/难受/" class="archive-article-date">
+  	<time datetime="2017-10-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-10-10</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/10/10/难受/">现在已经是无比的难受</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我们来新建一个 lesson2 项目，并生成一份它的 package.json。</p>
-<p>$ mkdir lesson2 &amp;&amp; cd lesson2<br>$ npm init<br>OK，这时会要求我们输入一些信息，乱填就好了，反正这个地方也不用填依赖关系。</p>
-<p>$ npm install express utility –save</p>
-<p>这次的安装命令与上节课的命令有两点不同，一是没有指定 registry，没有指定的情况下，默认从 npm 官方安装，上次我们是从淘宝的源安装的。二是多了个 –save 参数，这个参数的作用，就是会在你安装依赖的同时，自动把这些依赖写入 package.json。命令执行完成之后，查看 package.json，会发现多了一个 dependencies 字段，</p>
-<p>####// 引入依赖<br>var express = require(‘express’);<br>var utility = require(‘utility’);</p>
-<p>####// 建立 express 实例  ###<br>var app = express();</p>
-<p>app.get(‘/‘, function (req, res) {<br>  // 从 req.query 中取出我们的 q 参数。<br>  // 如果是 post 传来的 body 数据，则是在 req.body 里面，不过 express 默认不处理 body 中的信息，需要引入 <a href="https://github.com/expressjs/body-parser" target="_blank" rel="external">https://github.com/expressjs/body-parser</a> 这个中间件才会处理，这个后面会讲到。<br>  // 如果分不清什么是 query，什么是 body 的话，那就需要补一下 http 的知识了<br>  var q = req.query.q;</p>
-<p>  // 调用 utility.md5 方法，得到 md5 之后的值<br>  // 之所以使用 utility 这个库来生成 md5 值，其实只是习惯问题。每个人都有自己习惯的技术堆栈，<br>  // 我刚入职阿里的时候跟着苏千和朴灵混，所以也混到了不少他们的技术堆栈，仅此而已。<br>  // utility 的 github 地址：<a href="https://github.com/node-modules/utility" target="_blank" rel="external">https://github.com/node-modules/utility</a><br>  // 里面定义了很多常用且比较杂的辅助方法，可以去看看<br>  var md5Value = utility.md5(q);</p>
-<p>  res.send(md5Value);<br>});</p>
-<p>app.listen(3000, function (req, res) {<br>  console.log(‘app is running at port 3000’);<br>});</p>
-<p>//事实上，req.query.q 是http请求里面的 ?q=alsotang 这块东西<br>//res.send  返回数据</p>
-<h2 id="写一个爬虫"><a href="#写一个爬虫" class="headerlink" title="写一个爬虫"></a>写一个爬虫</h2><p>app.get(‘/‘, function (req, res, next) {<br>  // 用 superagent 去抓取 <a href="https://cnodejs.org/" target="_blank" rel="external">https://cnodejs.org/</a> 的内容<br>  superagent.get(‘<a href="https://cnodejs.org/" target="_blank" rel="external">https://cnodejs.org/</a>‘)<br>    .end(function (err, sres) {<br>      // 常规的错误处理<br>      if (err) {<br>        return next(err);<br>      }<br>      // sres.text 里面存储着网页的 html 内容，将它传给 cheerio.load 之后<br>      // 就可以得到一个实现了 jquery 接口的变量，我们习惯性地将它命名为 <code>$</code><br>      // 剩下就都是 jquery 的内容了<br>      var $ = cheerio.load(sres.text);<br>      var items = [];<br>      $(‘#topic_list .topic_title’).each(function (idx, element) {<br>        var $element = $(element);<br>        items.push({<br>          title: $element.attr(‘title’),<br>          href: $element.attr(‘href’)<br>        });<br>      });</p>
-<pre><code>  res.send(items);
-});
-</code></pre><p>});</p>
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+	</div>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/22/hello/" class="archive-article-date">
-  	<time datetime="2016-10-22T09:09:35.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-22</time>
-</a>
-      
-      
+          
 
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2016/10/23/用express＋cheerio＋superagent实现的爬虫/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          用express＋cheerio＋superagent实现的爬虫
-        
-      </div>
-    </a>
   
   
-    <a href="/2016/10/22/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-
-
-
-<div class="share_jia">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">Share to: &nbsp; </span>
-		<a class="jiathis_button_facebook"></a> 
-	    <a class="jiathis_button_twitter"></a>
-	    <a class="jiathis_button_plus"></a> 
-	    <a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
-</div>
-
-
-
-
-
-
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hello" data-title="lesson2" data-url="http://yoursite.com/2016/10/22/hello/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-
-
+    
 
 
       </div>
@@ -288,9 +207,9 @@ $ npm install express utility –save
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
