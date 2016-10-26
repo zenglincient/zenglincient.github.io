@@ -189,6 +189,60 @@
 
 
   
+    <article id="post-网易的笔试题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/26/网易的笔试题/">网易有道的笔试题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">实现一个函数的myBing 方法（类似函数的bing方法），实现功能</div><div class="line"></div><div class="line"> var funcA = <span class="keyword">function</span>(b)&#123; <span class="built_in">return</span> this.a + b &#125;</div><div class="line"> var obj = &#123; a : 2 &#125;</div><div class="line"> var funcB = funcA.myBing(obj,1)</div><div class="line"> </div><div class="line"> 运行函数得到的结果是3 提示：可以用call 或者apply</div></pre></td></tr></table></figure>
+<p>其实人家提示已经够多了<br>主要是，我没有读懂人家要说的意思。也就是我们执行funcA.bind(obj,1)会得到xx结果。<br>很明显，就是一个call方法转换作用域。<br>那么很明显了。就是让我们去定义一个funcA.myBing函数<br>funcA.myBing = function (obj,num){<br>    funcA.call(obj,num)<br>}</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> list = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"li"</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>;i&lt;list.length;i++)&#123;</div><div class="line">		list.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			alert(list[i].innerHTML);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;)()</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;list.length;i++)&#123;</div><div class="line">	(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</div><div class="line">		list[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			alert(list[i].innerHTML);</div><div class="line">		&#125;</div><div class="line">	&#125;)(i)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>第一个执行它会执行的是：不管你点击哪个，弹出的都是list[3]里面的东西<br>为什么？ 因为上面的定义只是会作为一个变量传进去。而且不会被js销毁。</p>
+<p>第二个的话你可以看成 var b = f(i)   b(i)<br>这样的话 i  是作为一个实际的数传入的。 因为他是立即执行，所以。。每个i都是不一样的</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/26/网易的笔试题/" class="archive-article-date">
+  	<time datetime="2016-10-26T14:34:52.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-26</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-css3的笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -329,7 +383,7 @@ Background-position (0,0) (0%,0%) Top left
 <p>我好帅<strong>我好帅</strong></p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">** ```bash **</div><div class="line">code here</div><div class="line">** ``` **</div></pre></td></tr></table></figure>
 <h3 id="邮箱"><a href="#邮箱" class="headerlink" title="邮箱"></a>邮箱</h3> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;yourEmail@xx.com&gt;</div></pre></td></tr></table></figure>
-<p> 我的邮箱是： <a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#122;&#101;&#110;&#103;&#108;&#x69;&#110;&#x63;&#105;&#x65;&#110;&#x74;&#x40;&#x66;&#111;&#x78;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#122;&#101;&#110;&#103;&#108;&#x69;&#110;&#x63;&#105;&#x65;&#110;&#x74;&#x40;&#x66;&#111;&#x78;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;</a></p>
+<p> 我的邮箱是： <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#122;&#101;&#x6e;&#x67;&#x6c;&#x69;&#110;&#99;&#105;&#x65;&#110;&#116;&#x40;&#102;&#x6f;&#120;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#122;&#101;&#x6e;&#x67;&#x6c;&#x69;&#110;&#99;&#105;&#x65;&#110;&#116;&#x40;&#102;&#x6f;&#120;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;</a></p>
 <h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> ***</div><div class="line"> ---</div><div class="line">- - - -</div></pre></td></tr></table></figure>
 <h2 id=""><a href="#" class="headerlink" title="  *"></a>  <em>*</em></h2><hr>
 
@@ -643,7 +697,7 @@ Background-position (0,0) (0%,0%) Top left
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/node-js-js-大前端/" style="font-size: 10px;">node.js js 大前端</a> <a href="/tags/大前端/" style="font-size: 20px;">大前端</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    				<a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/node-js-js-大前端/" style="font-size: 10px;">node.js js 大前端</a> <a href="/tags/大前端/" style="font-size: 20px;">大前端</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
     			</div>
     	</section>
     
