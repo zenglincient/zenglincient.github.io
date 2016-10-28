@@ -189,6 +189,166 @@
 
 
   
+    <article id="post-来，用node写一个聊天室" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title:来，用node写一个聊天室.md</p>
+<h2 id="tags-node-js"><a href="#tags-node-js" class="headerlink" title="tags:node.js"></a>tags:node.js</h2><h1 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h1><pre><code>引入依赖：
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);  <span class="comment">//依赖</span></div><div class="line"> <span class="keyword">var</span> io = <span class="built_in">require</span>(<span class="string">'socket.io'</span>);    ／／依赖</div><div class="line"></div><div class="line"><span class="keyword">var</span> app = express();  <span class="comment">//创建实例</span></div><div class="line"></div><div class="line">app.use(express.static(__dirname)); <span class="comment">//设置静态文件的目录</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> server = app.listen(<span class="number">8888</span>);  <span class="comment">//服务等于app监听8888端口</span></div><div class="line"><span class="keyword">var</span> ws = io.listen(server);   <span class="comment">//ws 等于io监听服务</span></div><div class="line"><span class="comment">//也就是说两层监听关系 服务监听app，io监听服务</span></div></pre></td></tr></table></figure>
+<p> 还有一种写法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">server = <span class="built_in">require</span>(<span class="string">'http'</span>).createServer(app);</div><div class="line">server.listen(<span class="number">3000</span>);</div><div class="line">io = <span class="built_in">require</span>(<span class="string">'socket.io'</span>).listen(server);</div></pre></td></tr></table></figure></p>
+<p>反正就这俩货io&gt;server&gt;app<br>好了监听完了，干啥呢？<br><strong>当然是搞事情啊</strong>先看看后端代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//看看前端给我们搞什么事情</span></div><div class="line">ws.on(<span class="string">'事情'</span>,callback(<span class="string">'客户端'</span>)&#123;</div><div class="line">	<span class="comment">//处理这件事情</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>然后看看前端代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ws.emit(<span class="string">'事情'</span>,<span class="string">'消息'</span>);</div></pre></td></tr></table></figure></p>
+<p>反正通信就是这样子搞得。前端搞事情，后端处理事情</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/27/来，用node写一个聊天室/" class="archive-article-date">
+  	<time datetime="2016-10-27T11:53:20.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-27</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-html冷知识" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>accesekey=’n’</p>
+<p>tabindex = ‘-1’  设置 </p>
+<p>contentediable</p>
+<p>contentmunu<br>dir=’rtl’</p>
+<p>draggable </p>
+<p>hidden</p>
+<p>spellcheck<br>     in cm  mm   pt pc<br>     em ex rem px %<br>     gd vw vh vm ch </p>
+<h2 id="你不知道的文本标签"><a href="#你不知道的文本标签" class="headerlink" title="你不知道的文本标签"></a>你不知道的文本标签</h2><pre><code>abbr   缩略语
+b
+br
+cite
+code
+del
+dfn
+em
+i
+ins
+kbd
+mark
+q
+rp
+rt
+rp
+rt
+samp
+var
+wbr
+</code></pre><h2 id="一组标签"><a href="#一组标签" class="headerlink" title="一组标签"></a>一组标签</h2><pre><code>dl   // defined list  
+dt   // defined title
+dd   // defined discription
+figcation
+figure 
+</code></pre><h2 id="划分标签"><a href="#划分标签" class="headerlink" title="划分标签"></a>划分标签</h2><pre><code>address
+article
+aside
+details
+footer
+h1-h6
+header
+hgroup
+nav
+section
+summary
+</code></pre><p>##<br>    audio<br>    canvas<br>    embed<br>    meter<br>    object<br>    param<br>    progress<br>    source<br>    svg<br>    track<br>    video</p>
+<p>连字运算符 比 加法运算符 优先<br> toFixed()<br> toExponential(n)<br> toPrecision(n)</p>
+<h1 id="js的DOM操作-来来去去就那几样，记不住就太腊鸡了！"><a href="#js的DOM操作-来来去去就那几样，记不住就太腊鸡了！" class="headerlink" title="js的DOM操作 (来来去去就那几样，记不住就太腊鸡了！)"></a>js的DOM操作 (来来去去就那几样，记不住就太腊鸡了！)</h1><p> //eventlistener // 如果不能在页面上写onclick ＝ fn，那么最好的办法就是addEventListener(‘click’,fnName)<br>     document.getElementById(“myBtn”).addEventListener(“click”, displayDate);</p>
+<h3 id="DOM节点的方法"><a href="#DOM节点的方法" class="headerlink" title="DOM节点的方法"></a>DOM节点的方法</h3><pre><code>document.createElement(&apos;p&apos;)
+
+para.creatTextNode(&apos;text&apos;)
+
+p.appendChild(&apos;para&apos;)
+
+p.insertBefore(para,child)   //insert para before the child
+
+parent.removeChild(child)
+
+parent.replaceChild(para,child)
+</code></pre><h3 id="dom-节点的属性"><a href="#dom-节点的属性" class="headerlink" title="dom 节点的属性"></a>dom 节点的属性</h3><pre><code> parentNode
+
+childNodes[nodenumber]
+
+firstChild
+
+lastChild
+
+nextSibling
+
+previousSibling
+</code></pre><p>^^^^^^^^^^^^^^^^^^^^^^^^^^^^</p>
+<h3 id="js-window"><a href="#js-window" class="headerlink" title="js window"></a>js window</h3><pre><code>window.open
+window.close
+</code></pre><h3 id="js-screen"><a href="#js-screen" class="headerlink" title="js screen"></a>js screen</h3><pre><code>screen.
+</code></pre><h3 id="js-history"><a href="#js-history" class="headerlink" title="js history"></a>js history</h3><pre><code>window.history.back()
+window.history.forward()
+</code></pre><h1 id="js数组的方法"><a href="#js数组的方法" class="headerlink" title="js数组的方法"></a>js数组的方法</h1><pre><code>concat(&lt;otherArray&gt;)
+join(&quot;&quot;)
+pop()
+push()
+shift()   //删第一个元素
+unshift()
+reverse()
+slice(&lt;start&gt;,&lt;end&gt;);
+sort()
+splice(&lt;start&gt;,&lt;length&gt;,&lt;addarguments&gt;)
+</code></pre>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/26/html冷知识/" class="archive-article-date">
+  	<time datetime="2016-10-26T15:27:52.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-26</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-网易的笔试题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -383,7 +543,7 @@ Background-position (0,0) (0%,0%) Top left
 <p>我好帅<strong>我好帅</strong></p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">** ```bash **</div><div class="line">code here</div><div class="line">** ``` **</div></pre></td></tr></table></figure>
 <h3 id="邮箱"><a href="#邮箱" class="headerlink" title="邮箱"></a>邮箱</h3> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;yourEmail@xx.com&gt;</div></pre></td></tr></table></figure>
-<p> 我的邮箱是： <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#122;&#101;&#x6e;&#x67;&#x6c;&#x69;&#110;&#99;&#105;&#x65;&#110;&#116;&#x40;&#102;&#x6f;&#120;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#122;&#101;&#x6e;&#x67;&#x6c;&#x69;&#110;&#99;&#105;&#x65;&#110;&#116;&#x40;&#102;&#x6f;&#120;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;</a></p>
+<p> 我的邮箱是： <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#x3a;&#122;&#101;&#x6e;&#103;&#x6c;&#x69;&#x6e;&#x63;&#x69;&#x65;&#110;&#x74;&#64;&#102;&#111;&#x78;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#x6f;&#x6d;">&#122;&#101;&#x6e;&#103;&#x6c;&#x69;&#x6e;&#x63;&#x69;&#x65;&#110;&#x74;&#64;&#102;&#111;&#x78;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a></p>
 <h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> ***</div><div class="line"> ---</div><div class="line">- - - -</div></pre></td></tr></table></figure>
 <h2 id=""><a href="#" class="headerlink" title="  *"></a>  <em>*</em></h2><hr>
 
