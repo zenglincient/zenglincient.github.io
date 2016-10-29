@@ -6,24 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>书堆里的玫瑰花瓣</title>
+  <title>来，用node写一个聊天室 | 书堆里的玫瑰花瓣</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title:来，用node写一个聊天室.md
-tags:node.js服务端引入依赖：
-12345678910var express = require(&apos;express&apos;);  //依赖 var io = require(&apos;socket.io&apos;);    ／／依赖var app = express();  //创建实例app.use(express.static(__dirname)); //">
+  <meta name="description" content="服务端引入依赖：
+12345678910var express = require(&apos;express&apos;);  //依赖 var io = require(&apos;socket.io&apos;);    ／／依赖var app = express();  //创建实例app.use(express.static(__dirname)); //设置静态文件的目录var server = app.listen(888">
 <meta property="og:type" content="article">
-<meta property="og:title" content="书堆里的玫瑰花瓣">
+<meta property="og:title" content="来，用node写一个聊天室">
 <meta property="og:url" content="http://yoursite.com/2016/10/27/来，用node写一个聊天室/index.html">
 <meta property="og:site_name" content="书堆里的玫瑰花瓣">
-<meta property="og:description" content="title:来，用node写一个聊天室.md
-tags:node.js服务端引入依赖：
-12345678910var express = require(&apos;express&apos;);  //依赖 var io = require(&apos;socket.io&apos;);    ／／依赖var app = express();  //创建实例app.use(express.static(__dirname)); //">
-<meta property="og:updated_time" content="2016-10-27T15:53:45.000Z">
+<meta property="og:description" content="服务端引入依赖：
+12345678910var express = require(&apos;express&apos;);  //依赖 var io = require(&apos;socket.io&apos;);    ／／依赖var app = express();  //创建实例app.use(express.static(__dirname)); //设置静态文件的目录var server = app.listen(888">
+<meta property="og:updated_time" content="2016-10-29T16:15:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="书堆里的玫瑰花瓣">
-<meta name="twitter:description" content="title:来，用node写一个聊天室.md
-tags:node.js服务端引入依赖：
-12345678910var express = require(&apos;express&apos;);  //依赖 var io = require(&apos;socket.io&apos;);    ／／依赖var app = express();  //创建实例app.use(express.static(__dirname)); //">
+<meta name="twitter:title" content="来，用node写一个聊天室">
+<meta name="twitter:description" content="服务端引入依赖：
+12345678910var express = require(&apos;express&apos;);  //依赖 var io = require(&apos;socket.io&apos;);    ／／依赖var app = express();  //创建实例app.use(express.static(__dirname)); //设置静态文件的目录var server = app.listen(888">
   
     <link rel="alternative" href="/atom.xml" title="书堆里的玫瑰花瓣" type="application/atom+xml">
   
@@ -153,11 +150,19 @@ tags:node.js服务端引入依赖：
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      来，用node写一个聊天室
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>title:来，用node写一个聊天室.md</p>
-<h2 id="tags-node-js"><a href="#tags-node-js" class="headerlink" title="tags:node.js"></a>tags:node.js</h2><h1 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h1><pre><code>引入依赖：
+        <h1 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h1><pre><code>引入依赖：
 </code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);  <span class="comment">//依赖</span></div><div class="line"> <span class="keyword">var</span> io = <span class="built_in">require</span>(<span class="string">'socket.io'</span>);    ／／依赖</div><div class="line"></div><div class="line"><span class="keyword">var</span> app = express();  <span class="comment">//创建实例</span></div><div class="line"></div><div class="line">app.use(express.static(__dirname)); <span class="comment">//设置静态文件的目录</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> server = app.listen(<span class="number">8888</span>);  <span class="comment">//服务等于app监听8888端口</span></div><div class="line"><span class="keyword">var</span> ws = io.listen(server);   <span class="comment">//ws 等于io监听服务</span></div><div class="line"><span class="comment">//也就是说两层监听关系 服务监听app，io监听服务</span></div></pre></td></tr></table></figure>
 <p> 还有一种写法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">server = <span class="built_in">require</span>(<span class="string">'http'</span>).createServer(app);</div><div class="line">server.listen(<span class="number">3000</span>);</div><div class="line">io = <span class="built_in">require</span>(<span class="string">'socket.io'</span>).listen(server);</div></pre></td></tr></table></figure></p>
 <p>反正就这俩货io&gt;server&gt;app<br>好了监听完了，干啥呢？<br><strong>当然是搞事情啊</strong>先看看后端代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//看看前端给我们搞什么事情</span></div><div class="line">ws.on(<span class="string">'事情'</span>,callback(<span class="string">'客户端'</span>)&#123;</div><div class="line">	<span class="comment">//处理这件事情</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
@@ -172,6 +177,11 @@ tags:node.js服务端引入依赖：
   	<time datetime="2016-10-27T11:53:20.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-27</time>
 </a>
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+	</div>
+
       
 
       <div class="clearfix"></div>
@@ -227,7 +237,7 @@ tags:node.js服务端引入依赖：
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="来，用node写一个聊天室" data-title="" data-url="http://yoursite.com/2016/10/27/来，用node写一个聊天室/"></div>
+	<div class="ds-thread" data-thread-key="来，用node写一个聊天室" data-title="来，用node写一个聊天室" data-url="http://yoursite.com/2016/10/27/来，用node写一个聊天室/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -306,7 +316,7 @@ tags:node.js服务端引入依赖：
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/node-js-js-大前端/" style="font-size: 10px;">node.js js 大前端</a> <a href="/tags/大前端/" style="font-size: 20px;">大前端</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+    				<a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/node-js-js-大前端/" style="font-size: 10px;">node.js js 大前端</a> <a href="/tags/大前端/" style="font-size: 20px;">大前端</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
     			</div>
     	</section>
     

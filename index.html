@@ -249,11 +249,19 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/27/来，用node写一个聊天室/">来，用node写一个聊天室</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>title:来，用node写一个聊天室.md</p>
-<h2 id="tags-node-js"><a href="#tags-node-js" class="headerlink" title="tags:node.js"></a>tags:node.js</h2><h1 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h1><pre><code>引入依赖：
+        <h1 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h1><pre><code>引入依赖：
 </code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);  <span class="comment">//依赖</span></div><div class="line"> <span class="keyword">var</span> io = <span class="built_in">require</span>(<span class="string">'socket.io'</span>);    ／／依赖</div><div class="line"></div><div class="line"><span class="keyword">var</span> app = express();  <span class="comment">//创建实例</span></div><div class="line"></div><div class="line">app.use(express.static(__dirname)); <span class="comment">//设置静态文件的目录</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> server = app.listen(<span class="number">8888</span>);  <span class="comment">//服务等于app监听8888端口</span></div><div class="line"><span class="keyword">var</span> ws = io.listen(server);   <span class="comment">//ws 等于io监听服务</span></div><div class="line"><span class="comment">//也就是说两层监听关系 服务监听app，io监听服务</span></div></pre></td></tr></table></figure>
 <p> 还有一种写法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">server = <span class="built_in">require</span>(<span class="string">'http'</span>).createServer(app);</div><div class="line">server.listen(<span class="number">3000</span>);</div><div class="line">io = <span class="built_in">require</span>(<span class="string">'socket.io'</span>).listen(server);</div></pre></td></tr></table></figure></p>
 <p>反正就这俩货io&gt;server&gt;app<br>好了监听完了，干啥呢？<br><strong>当然是搞事情啊</strong>先看看后端代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//看看前端给我们搞什么事情</span></div><div class="line">ws.on(<span class="string">'事情'</span>,callback(<span class="string">'客户端'</span>)&#123;</div><div class="line">	<span class="comment">//处理这件事情</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
@@ -268,6 +276,11 @@
   	<time datetime="2016-10-27T11:53:20.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-27</time>
 </a>
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+	</div>
+
       
 
       <div class="clearfix"></div>
@@ -532,7 +545,7 @@ Background-position (0,0) (0%,0%) Top left
 <p>我好帅<strong>我好帅</strong></p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">** ```bash **</div><div class="line">code here</div><div class="line">** ``` **</div></pre></td></tr></table></figure>
 <h3 id="邮箱"><a href="#邮箱" class="headerlink" title="邮箱"></a>邮箱</h3> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;yourEmail@xx.com&gt;</div></pre></td></tr></table></figure>
-<p> 我的邮箱是： <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#x7a;&#101;&#x6e;&#x67;&#x6c;&#x69;&#x6e;&#99;&#x69;&#x65;&#110;&#x74;&#x40;&#x66;&#x6f;&#120;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#x7a;&#101;&#x6e;&#x67;&#x6c;&#x69;&#x6e;&#99;&#x69;&#x65;&#110;&#x74;&#x40;&#x66;&#x6f;&#120;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+<p> 我的邮箱是： <a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#58;&#x7a;&#101;&#110;&#103;&#108;&#105;&#110;&#99;&#x69;&#x65;&#110;&#116;&#x40;&#x66;&#111;&#x78;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;">&#x7a;&#101;&#110;&#103;&#108;&#105;&#110;&#99;&#x69;&#x65;&#110;&#116;&#x40;&#x66;&#111;&#x78;&#109;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;</a></p>
 <h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> ***</div><div class="line"> ---</div><div class="line">- - - -</div></pre></td></tr></table></figure>
 <h2 id=""><a href="#" class="headerlink" title="  *"></a>  <em>*</em></h2><hr>
 
@@ -797,7 +810,7 @@ Background-position (0,0) (0%,0%) Top left
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/node-js-js-大前端/" style="font-size: 10px;">node.js js 大前端</a> <a href="/tags/大前端/" style="font-size: 20px;">大前端</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+    				<a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/node-js-js-大前端/" style="font-size: 10px;">node.js js 大前端</a> <a href="/tags/大前端/" style="font-size: 20px;">大前端</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
     			</div>
     	</section>
     
