@@ -139,6 +139,65 @@
       <div class="body-wrap">
         
   
+    <article id="post-hello" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/22/hello/">lesson2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我们来新建一个 lesson2 项目，并生成一份它的 package.json。</p>
+<p>$ mkdir lesson2 &amp;&amp; cd lesson2<br>$ npm init<br>OK，这时会要求我们输入一些信息，乱填就好了，反正这个地方也不用填依赖关系。</p>
+<p>$ npm install express utility –save</p>
+<p>这次的安装命令与上节课的命令有两点不同，一是没有指定 registry，没有指定的情况下，默认从 npm 官方安装，上次我们是从淘宝的源安装的。二是多了个 –save 参数，这个参数的作用，就是会在你安装依赖的同时，自动把这些依赖写入 package.json。命令执行完成之后，查看 package.json，会发现多了一个 dependencies 字段，</p>
+<p>####// 引入依赖<br>var express = require(‘express’);<br>var utility = require(‘utility’);</p>
+<p>####// 建立 express 实例  ###<br>var app = express();</p>
+<p>app.get(‘/‘, function (req, res) {<br>  // 从 req.query 中取出我们的 q 参数。<br>  // 如果是 post 传来的 body 数据，则是在 req.body 里面，不过 express 默认不处理 body 中的信息，需要引入 <a href="https://github.com/expressjs/body-parser" target="_blank" rel="external">https://github.com/expressjs/body-parser</a> 这个中间件才会处理，这个后面会讲到。<br>  // 如果分不清什么是 query，什么是 body 的话，那就需要补一下 http 的知识了<br>  var q = req.query.q;</p>
+<p>  // 调用 utility.md5 方法，得到 md5 之后的值<br>  // 之所以使用 utility 这个库来生成 md5 值，其实只是习惯问题。每个人都有自己习惯的技术堆栈，<br>  // 我刚入职阿里的时候跟着苏千和朴灵混，所以也混到了不少他们的技术堆栈，仅此而已。<br>  // utility 的 github 地址：<a href="https://github.com/node-modules/utility" target="_blank" rel="external">https://github.com/node-modules/utility</a><br>  // 里面定义了很多常用且比较杂的辅助方法，可以去看看<br>  var md5Value = utility.md5(q);</p>
+<p>  res.send(md5Value);<br>});</p>
+<p>app.listen(3000, function (req, res) {<br>  console.log(‘app is running at port 3000’);<br>});</p>
+<p>//事实上，req.query.q 是http请求里面的 ?q=alsotang 这块东西<br>//res.send  返回数据</p>
+<h2 id="写一个爬虫"><a href="#写一个爬虫" class="headerlink" title="写一个爬虫"></a>写一个爬虫</h2><p>app.get(‘/‘, function (req, res, next) {<br>  // 用 superagent 去抓取 <a href="https://cnodejs.org/" target="_blank" rel="external">https://cnodejs.org/</a> 的内容<br>  superagent.get(‘<a href="https://cnodejs.org/" target="_blank" rel="external">https://cnodejs.org/</a>‘)<br>    .end(function (err, sres) {<br>      // 常规的错误处理<br>      if (err) {<br>        return next(err);<br>      }<br>      // sres.text 里面存储着网页的 html 内容，将它传给 cheerio.load 之后<br>      // 就可以得到一个实现了 jquery 接口的变量，我们习惯性地将它命名为 <code>$</code><br>      // 剩下就都是 jquery 的内容了<br>      var $ = cheerio.load(sres.text);<br>      var items = [];<br>      $(‘#topic_list .topic_title’).each(function (idx, element) {<br>        var $element = $(element);<br>        items.push({<br>          title: $element.attr(‘title’),<br>          href: $element.attr(‘href’)<br>        });<br>      });</p>
+<pre><code>  res.send(items);
+});
+</code></pre><p>});</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/22/hello/" class="archive-article-date">
+  	<time datetime="2016-10-22T09:09:35.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-22</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     

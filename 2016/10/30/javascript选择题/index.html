@@ -6,14 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2016 | 书堆里的玫瑰花瓣</title>
+  <title>书堆里的玫瑰花瓣</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="JavaScript中document.getElementById的返回值的类型为？object
+如下代码输出的结果是什么：
+console.log(1+ “2”+”2”);console.log(1+ +”2”+”2”);console.log(“A”- “B”+”2”);console.log(“A”- “B”+2);
+1console.log(1+ “2”+”2”);做加法时要注意双引号，">
+<meta property="og:type" content="article">
 <meta property="og:title" content="书堆里的玫瑰花瓣">
-<meta property="og:url" content="http://yoursite.com/archives/2016/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/10/30/javascript选择题/index.html">
 <meta property="og:site_name" content="书堆里的玫瑰花瓣">
+<meta property="og:description" content="JavaScript中document.getElementById的返回值的类型为？object
+如下代码输出的结果是什么：
+console.log(1+ “2”+”2”);console.log(1+ +”2”+”2”);console.log(“A”- “B”+”2”);console.log(“A”- “B”+2);
+1console.log(1+ “2”+”2”);做加法时要注意双引号，">
+<meta property="og:updated_time" content="2016-10-30T10:46:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="书堆里的玫瑰花瓣">
+<meta name="twitter:description" content="JavaScript中document.getElementById的返回值的类型为？object
+如下代码输出的结果是什么：
+console.log(1+ “2”+”2”);console.log(1+ +”2”+”2”);console.log(“A”- “B”+”2”);console.log(“A”- “B”+2);
+1console.log(1+ “2”+”2”);做加法时要注意双引号，">
   
     <link rel="alternative" href="/atom.xml" title="书堆里的玫瑰花瓣" type="application/atom+xml">
   
@@ -137,325 +150,111 @@
 </nav>
 
       <div class="body-wrap">
-        
-  
-  
+        <article id="post-javascript选择题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+    <div class="article-entry" itemprop="articleBody">
       
+        <p>JavaScript中document.getElementById的返回值的类型为？<br>object</p>
+<p>如下代码输出的结果是什么：</p>
+<p>console.log(1+ “2”+”2”);<br>console.log(1+ +”2”+”2”);<br>console.log(“A”- “B”+”2”);<br>console.log(“A”- “B”+2);</p>
+<p>1<br>console.log(1+ “2”+”2”);<br>做加法时要注意双引号，当使用双引号时，JavaScript认为是字符串，字符串相加等于字符串合并。<br>因此，这里相当于字符串的合并，即为122.</p>
+<p>console.log(1+ +”2”+”2”);<br>第一个+”2”中的加号是一元加操作符，+”2”会变成数值2，因此1+ +”2”相当于1+2=3.<br>然后和后面的字符串“2”相合并，变成了字符串”32”.</p>
+<p>console.log(“A”- “B”+”2”);<br>“A”-“B”的运算中，需要先把”A”和”B”用Number函数转换为数值，其结果为NaN，在剪发操作中，如果有一个是NaN，则结果是NaN，因此”A”-“B”结果为NaN。<br>然后和”2”进行字符串合并，变成了NaN2.</p>
+<p>console.log(“A”- “B”+2);<br>根据上题所述，”A”-“B”结果为NaN，然后和数值2进行加法操作，在加法操作中，如果有一个操作数是NaN，则结果为NaN。</p>
+<p>正确答案: A   你的答案: D (错误)</p>
+<p>var obj=( );<br>var obj=[ ];<br>var obj={ };<br>var obj=/ /;</p>
+<p>contextmenu   是当浏览者按下鼠标右键出现菜单时或者通过键盘的按键触发页面菜单时触发的事件   [   试试在页面中的 <body>   中加入   onContentMenu=”return false”   就可禁止使用鼠标右键了  </body></p>
+<p>open() 方法可以查找一个已经存在或者新建的浏览器窗口。<br>语法：<br>window.open([URL], [窗口名称], [参数字符串])<br>参数说明:<br>URL：可选参数，在窗口中要显示网页的网址或路径。如果省略这个参数，或者它的值是空字符串，那么窗口就不显示任何文档。<br>窗口名称：可选参数，被打开窗口的名称。<br>    1.该名称由字母、数字和下划线字符组成。<br>    2.”_top”、”_blank”、”_selft”具有特殊意义的名称。<br>       _blank：在新窗口显示目标网页<br>       _self：在当前窗口显示目标网页<br>       _top：框架网页中在上部窗口中显示目标网页<br>    3.相同 name 的窗口只能创建一个，要想创建多个窗口则 name 不能相同。<br>    4.name 不能包含有空格。<br>参数字符串：可选参数，设置窗口参数，各参数用逗号隔开。</p>
+<p>hasOwnProperty： 是用来判断一个对象是否有你给出名称的属性或对象。不过需要注意的是，此方法无法检查该对象的原型链中是否具有该属性，该属性必须是对象本身的一个成员。<br>isPrototypeOf : 是用来判断要检查其原型链的对象是否存在于指定对象实例中，是则返回true，否则返回false。</p>
+<p>$emit() 是向上冒泡<br>$broadcast() 是向下传播事件 </p>
+<p>onBlur:当失去输入焦点后产生该事件<br>onFocus:当输入获得焦点后，产生该文件<br>onchange:当文字值改变时，产生该事件<br>onselect:当文字加亮后，产生该事件<br>onClick：当组件被点击时产生的事件</p>
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/30/javascript选择题/" class="archive-article-date">
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/30/javascript选择题/" class="archive-article-date">
   	<time datetime="2016-10-30T10:46:18.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-30</time>
 </a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/29/写在秋风来的时候/" class="archive-article-date">
-  	<time datetime="2016-10-29T15:51:42.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/29/写在秋风来的时候/">我本不应该如此负能量</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+  
+<nav id="article-nav">
+  
+    <a href="/2017/10/10/难受/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          xiaoyixiao
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/29/写在秋风来的时候/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我本不应该如此负能量</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/27/来，用node写一个聊天室/" class="archive-article-date">
-  	<time datetime="2016-10-27T11:53:20.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/27/来，用node写一个聊天室/">来，用node写一个聊天室</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/26/html冷知识/" class="archive-article-date">
-  	<time datetime="2016-10-26T15:27:52.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/26/html冷知识/">关于html5</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="javascript选择题" data-title="" data-url="http://yoursite.com/2016/10/30/javascript选择题/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/26/网易的笔试题/" class="archive-article-date">
-  	<time datetime="2016-10-26T14:34:52.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/26/网易的笔试题/">网易有道的笔试题</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/24/css3的笔记/" class="archive-article-date">
-  	<time datetime="2016-10-24T03:26:31.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/24/css3的笔记/">css的笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/23/如何写一个md文档/" class="archive-article-date">
-  	<time datetime="2016-10-23T15:49:37.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/23/如何写一个md文档/">如何写一个md文档</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/大前端/">大前端</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/23/蓝凌面试，被虐了一下/" class="archive-article-date">
-  	<time datetime="2016-10-23T12:19:46.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/23/蓝凌面试，被虐了一下/">蓝凌电话面试题目</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/大前端/">大前端</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/23/用express＋cheerio＋superagent实现的爬虫/" class="archive-article-date">
-  	<time datetime="2016-10-23T08:52:51.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/23/用express＋cheerio＋superagent实现的爬虫/">用express＋cheerio＋superagent实现的爬虫</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js-js-大前端/">node.js js 大前端</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/22/hello/" class="archive-article-date">
-  	<time datetime="2016-10-22T09:09:35.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/22/hello/">lesson2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2016/page/2/">2</a><a class="extend next" rel="next" href="/archives/2016/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
       </div>
@@ -478,8 +277,8 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
